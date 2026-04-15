@@ -9,7 +9,6 @@ const HERO_TAGS = [
   'Need Equipment?',
   'Need Lighting?',
   'Throwing an Event?',
-  'Planning Something Big?',
   'Want It Done Right?',
   'Need a Hand?',
   'Need Backup?',
@@ -18,9 +17,6 @@ const HERO_TAGS = [
   'Need It Cleaned Up?',
   'Need Outdoor Help?',
   'Want It Off Your Plate?',
-  'Sound Team Struggling?',
-  'Volunteers Overwhelmed?',
-  'Training Your Sound Team?',
 ];
 
 /* ── Scroll reveal ── */

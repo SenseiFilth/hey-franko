@@ -483,7 +483,7 @@ export default function HomePage() {
             <div className="flex flex-wrap gap-x-5 gap-y-2 justify-center">
               {[
                 { label: 'Privacy Policy', href: '/privacy-policy' },
-                { label: 'Terms & Conditions', href: '/terms' },
+                { label: 'Terms of Service', href: '/terms' },
                 { label: 'Refund Policy', href: '/refund-policy' },
                 { label: 'Shipping & Delivery', href: '/shipping-policy' },
                 { label: 'Accessibility', href: '/accessibility' },

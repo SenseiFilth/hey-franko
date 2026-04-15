@@ -7,3 +7,16 @@ node_modules/
 .DS_Store
 Thumbs.db
 .vercel
+
+# Client brief — keep out of public repo
+heyfranko.md.txt
+
+# Original spaced-path asset folders (superseded by clean /public/logo, /hero, /graphics)
+"public/Official Logo/"
+"public/Hero Animated Background/"
+"public/Extra Graphics/"
+
+# Unoptimized raw images (we serve optimized .jpg only)
+public/graphics/banner-1.png
+public/graphics/banner-2.png
+public/graphics/unanimated.png

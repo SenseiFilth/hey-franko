@@ -7,6 +7,13 @@ export const metadata = {
   description:
     'Expert equipment rentals, DJ services, A/V & lighting, audio engineering, and beauty services for events of all sizes. Charlotte, NC.',
   icons: { icon: '/favicon.ico' },
+  themeColor: '#090909',
+};
+
+export const viewport = {
+  width: 'device-width',
+  initialScale: 1,
+  maximumScale: 5,
 };
 
 export default function RootLayout({ children }) {

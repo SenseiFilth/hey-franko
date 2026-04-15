@@ -1,9 +1,11 @@
+/* Google Fonts MUST come before @tailwind directives */
+@import url('https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@400;600;700;800;900&family=Inter:wght@300;400;500;600&display=swap');
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
-@import url('https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@400;600;700;800;900&family=Inter:wght@300;400;500;600&display=swap');
-
+/* ── CSS Variables ── */
 :root {
   --font-display: 'Barlow Condensed', sans-serif;
   --font-body: 'Inter', sans-serif;
@@ -11,83 +13,131 @@
   --yellow: #f5e114;
 }
 
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
+/* ── Base Reset ── */
+@layer base {
+  *, *::before, *::after {
+    box-sizing: border-box;
+  }
+
+  html {
+    scroll-behavior: smooth;
+    -webkit-text-size-adjust: 100%;
+  }
+
+  body {
+    background-color: #090909;
+    color: #ffffff;
+    font-family: var(--font-body);
+    overflow-x: hidden;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+
+  /* Prevent iOS input zoom — must be 16px+ */
+  input, select, textarea {
+    font-size: 16px;
+  }
 }
 
-html {
-  scroll-behavior: smooth;
+/* ── Component Classes ── */
+@layer components {
+  .form-input {
+    @apply w-full bg-[#1a1a1a] border border-[#2a2a2a] rounded-lg px-4 py-3 text-white placeholder-gray-500 focus:outline-none focus:border-[#39d353] transition-colors duration-200;
+    font-size: 16px; /* prevent iOS zoom */
+  }
+
+  .form-input:focus {
+    box-shadow: 0 0 0 2px rgba(57, 211, 83, 0.2);
+  }
+
+  .btn-primary {
+    @apply inline-flex items-center justify-center gap-2 bg-[#39d353] text-black font-semibold px-8 py-4 rounded-lg transition-all duration-200 hover:brightness-110 active:scale-95 cursor-pointer select-none;
+    font-family: var(--font-display);
+    letter-spacing: 0.04em;
+    font-size: 1.05rem;
+    -webkit-tap-highlight-color: transparent;
+  }
+
+  .btn-outline {
+    @apply inline-flex items-center justify-center gap-2 border border-[#39d353] text-[#39d353] font-semibold px-8 py-4 rounded-lg transition-all duration-200 hover:bg-[#39d353] hover:text-black active:scale-95 cursor-pointer select-none;
+    font-family: var(--font-display);
+    letter-spacing: 0.04em;
+    font-size: 1.05rem;
+    -webkit-tap-highlight-color: transparent;
+  }
+
+  .btn-yellow {
+    @apply inline-flex items-center justify-center gap-2 bg-[#f5e114] text-black font-semibold px-8 py-4 rounded-lg transition-all duration-200 hover:brightness-110 active:scale-95 cursor-pointer select-none;
+    font-family: var(--font-display);
+    letter-spacing: 0.04em;
+    font-size: 1.05rem;
+    -webkit-tap-highlight-color: transparent;
+  }
 }
 
-body {
-  background-color: #090909;
-  color: #ffffff;
-  font-family: var(--font-body);
-  overflow-x: hidden;
+/* ── Utility Classes ── */
+@layer utilities {
+  /* Scroll-reveal system */
+  .reveal {
+    opacity: 0;
+    transform: translateY(28px);
+    transition: opacity 0.65s ease, transform 0.65s ease;
+  }
+  .reveal.visible {
+    opacity: 1;
+    transform: translateY(0);
+  }
+  .reveal-delay-1 { transition-delay: 0.08s; }
+  .reveal-delay-2 { transition-delay: 0.16s; }
+  .reveal-delay-3 { transition-delay: 0.24s; }
+  .reveal-delay-4 { transition-delay: 0.32s; }
+
+  /* Glows */
+  .glow-green {
+    box-shadow: 0 0 22px rgba(57, 211, 83, 0.4);
+  }
+  .glow-green:hover {
+    box-shadow: 0 0 32px rgba(57, 211, 83, 0.55);
+  }
+  .glow-yellow {
+    box-shadow: 0 0 22px rgba(245, 225, 20, 0.4);
+  }
+
+  /* Gradient text */
+  .gradient-text {
+    background: linear-gradient(135deg, #39d353 0%, #f5e114 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+
+  /* Hero fade animations with proper initial state */
+  .hero-fade {
+    opacity: 0;
+    transform: translateY(16px);
+    animation: heroFadeUp 0.8s ease forwards;
+  }
+  .hero-fade-delay-1 { animation-delay: 0.15s; }
+  .hero-fade-delay-2 { animation-delay: 0.35s; }
+  .hero-fade-delay-3 { animation-delay: 0.55s; }
+  .hero-fade-delay-4 { animation-delay: 0.75s; }
+
+  @keyframes heroFadeUp {
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
 }
 
-/* Scroll animations */
-.reveal {
-  opacity: 0;
-  transform: translateY(32px);
-  transition: opacity 0.7s ease, transform 0.7s ease;
-}
-.reveal.visible {
-  opacity: 1;
-  transform: translateY(0);
-}
-.reveal-delay-1 { transition-delay: 0.1s; }
-.reveal-delay-2 { transition-delay: 0.2s; }
-.reveal-delay-3 { transition-delay: 0.3s; }
-.reveal-delay-4 { transition-delay: 0.4s; }
-
-/* Green glow utility */
-.glow-green {
-  box-shadow: 0 0 24px rgba(57, 211, 83, 0.35);
-}
-.glow-yellow {
-  box-shadow: 0 0 24px rgba(245, 225, 20, 0.35);
-}
-
-/* Gradient text */
-.gradient-text {
-  background: linear-gradient(135deg, #39d353 0%, #f5e114 100%);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  background-clip: text;
-}
-
-/* Custom scrollbar */
-::-webkit-scrollbar { width: 6px; }
+/* ── Scrollbar ── */
+::-webkit-scrollbar { width: 5px; }
 ::-webkit-scrollbar-track { background: #090909; }
 ::-webkit-scrollbar-thumb { background: #39d353; border-radius: 3px; }
+::-webkit-scrollbar-thumb:hover { background: #f5e114; }
 
-/* Form inputs */
-.form-input {
-  @apply w-full bg-[#1a1a1a] border border-[#2a2a2a] rounded-lg px-4 py-3 text-white placeholder-gray-500 focus:outline-none focus:border-brand-green transition-colors duration-200;
-}
-.form-input:focus {
-  box-shadow: 0 0 0 2px rgba(57, 211, 83, 0.2);
-}
-
-/* Button styles */
-.btn-primary {
-  @apply inline-flex items-center justify-center gap-2 bg-brand-green text-black font-semibold px-8 py-4 rounded-lg transition-all duration-200 hover:brightness-110 active:scale-95;
-  font-family: var(--font-display);
-  letter-spacing: 0.04em;
-  font-size: 1.1rem;
-}
-.btn-outline {
-  @apply inline-flex items-center justify-center gap-2 border border-brand-green text-brand-green font-semibold px-8 py-4 rounded-lg transition-all duration-200 hover:bg-brand-green hover:text-black active:scale-95;
-  font-family: var(--font-display);
-  letter-spacing: 0.04em;
-  font-size: 1.1rem;
-}
-.btn-yellow {
-  @apply inline-flex items-center justify-center gap-2 bg-brand-yellow text-black font-semibold px-8 py-4 rounded-lg transition-all duration-200 hover:brightness-110 active:scale-95;
-  font-family: var(--font-display);
-  letter-spacing: 0.04em;
-  font-size: 1.1rem;
+/* ── Selection ── */
+::selection {
+  background: rgba(57, 211, 83, 0.3);
+  color: #fff;
 }

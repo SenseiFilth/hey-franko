@@ -18,9 +18,9 @@ export default function ContactWidget() {
     }, 3200);
   };
 
+  // Outer wrapper uses pointer-events-none so the 340px-wide invisible div
+  // doesn't block taps on page content beneath it. Each child opts in explicitly.
   return (
-    {/* Outer wrapper: pointer-events-none so the 340px-wide invisible div doesn't
-        block taps on page content beneath it. Each child opts in explicitly. */}
     <div className="fixed bottom-5 right-4 sm:right-6 z-50 flex flex-col items-end gap-3 pointer-events-none">
       {/* Card — pointer-events-auto only when open */}
       <div

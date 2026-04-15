@@ -28,18 +28,18 @@ export default function Navbar() {
     if (searchOpen) searchRef.current?.focus();
   }, [searchOpen]);
 
-  // Close menu on resize to desktop
   useEffect(() => {
     const onResize = () => { if (window.innerWidth >= 768) setMenuOpen(false); };
     window.addEventListener('resize', onResize);
     return () => window.removeEventListener('resize', onResize);
   }, []);
 
-  // Prevent body scroll when mobile menu is open
   useEffect(() => {
     document.body.style.overflow = menuOpen ? 'hidden' : '';
     return () => { document.body.style.overflow = ''; };
   }, [menuOpen]);
+
+  const close = () => setMenuOpen(false);
 
   return (
     <>
@@ -51,14 +51,15 @@ export default function Navbar() {
         }`}
       >
         <div className="max-w-7xl mx-auto px-5 sm:px-6 flex items-center justify-between">
-          {/* Logo */}
-          <Link href="/" className="flex-shrink-0 z-10">
+
+          {/* Logo — hidden on mobile, visible on sm+ */}
+          <Link href="/" className="hidden sm:block flex-shrink-0 z-10">
             <Image
               src="/logo/hey-franko-logo.png"
               alt="Hey Frank-O"
               width={120}
               height={50}
-              className="object-contain drop-shadow-lg w-[100px] sm:w-[120px]"
+              className="object-contain drop-shadow-lg w-[120px]"
               priority
             />
           </Link>
@@ -79,7 +80,6 @@ export default function Navbar() {
 
           {/* Right Actions — Desktop */}
           <div className="hidden md:flex items-center gap-4">
-            {/* Search */}
             <div className="relative flex items-center">
               <button
                 onClick={() => setSearchOpen(!searchOpen)}
@@ -107,8 +107,6 @@ export default function Navbar() {
                 />
               </div>
             </div>
-
-            {/* Login */}
             <Link
               href="/login"
               className="border border-[#39d353]/50 text-[#39d353] px-4 py-2 rounded-lg hover:bg-[#39d353] hover:text-black transition-all duration-200 font-semibold"
@@ -118,12 +116,12 @@ export default function Navbar() {
             </Link>
           </div>
 
-          {/* Mobile: search + hamburger */}
-          <div className="flex md:hidden items-center gap-2">
+          {/* Mobile: Log In + Hamburger */}
+          <div className="flex md:hidden items-center gap-2 ml-auto">
             <Link
               href="/login"
               className="border border-[#39d353]/50 text-[#39d353] px-3 py-1.5 rounded-lg text-xs font-semibold"
-              style={{ fontFamily: 'var(--font-display)', letterSpacing: '0.06em' }}
+              style={{ fontFamily: 'var(--font-display)', letterSpacing: '0.06em', touchAction: 'manipulation' }}
             >
               Log In
             </Link>
@@ -132,6 +130,7 @@ export default function Navbar() {
               onClick={() => setMenuOpen(!menuOpen)}
               aria-label="Toggle menu"
               aria-expanded={menuOpen}
+              style={{ touchAction: 'manipulation' }}
             >
               <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 {menuOpen ? (
@@ -145,15 +144,28 @@ export default function Navbar() {
         </div>
       </header>
 
-      {/* Mobile Menu — full screen overlay */}
+      {/* ── Mobile Menu ─────────────────────────────────────────────────────
+          z-[60] places it ABOVE the header (z-50) so no tap interception.
+          visibility + opacity instead of opacity-only fixes iOS touch timing.
+      ────────────────────────────────────────────────────────────────────── */}
       <div
-        className={`fixed inset-0 z-40 md:hidden flex flex-col transition-all duration-300 ${
-          menuOpen ? 'opacity-100 pointer-events-auto' : 'opacity-0 pointer-events-none'
-        }`}
-        style={{ background: 'rgba(9,9,9,0.98)', backdropFilter: 'blur(12px)' }}
+        className="fixed inset-0 md:hidden flex flex-col"
+        style={{
+          zIndex: 60,
+          background: 'rgba(9,9,9,0.98)',
+          backdropFilter: 'blur(12px)',
+          // visibility + opacity: visibility:hidden removes element from tap order
+          // while opacity:0 fades; visibility:visible restores it instantly on open
+          visibility: menuOpen ? 'visible' : 'hidden',
+          opacity: menuOpen ? 1 : 0,
+          transition: 'opacity 0.25s ease, visibility 0.25s ease',
+          pointerEvents: menuOpen ? 'auto' : 'none',
+        }}
+        aria-hidden={!menuOpen}
       >
-        <div className="flex flex-col items-center justify-center flex-1 gap-8 px-6">
-          <Link href="/" className="mb-4">
+        <div className="flex flex-col items-center justify-center flex-1 gap-7 px-6">
+          {/* Logo inside menu */}
+          <Link href="/" onClick={close} className="mb-2">
             <Image src="/logo/hey-franko-logo.png" alt="Hey Frank-O" width={140} height={60} className="object-contain" />
           </Link>
 
@@ -161,26 +173,33 @@ export default function Navbar() {
             <Link
               key={link.href}
               href={link.href}
-              onClick={() => setMenuOpen(false)}
-              className="text-3xl text-white/80 hover:text-[#39d353] transition-colors font-black uppercase tracking-widest text-center"
-              style={{ fontFamily: 'var(--font-display)' }}
+              onClick={close}
+              className="text-3xl text-white/80 hover:text-[#39d353] font-black uppercase tracking-widest text-center block w-full"
+              style={{
+                fontFamily: 'var(--font-display)',
+                touchAction: 'manipulation',
+                WebkitTapHighlightColor: 'transparent',
+                cursor: 'pointer',
+              }}
             >
               {link.label}
             </Link>
           ))}
 
-          <div className="flex flex-col gap-3 w-full max-w-xs mt-4">
+          <div className="flex flex-col gap-3 w-full max-w-xs mt-2">
             <Link
               href="/get-a-quote"
-              onClick={() => setMenuOpen(false)}
+              onClick={close}
               className="btn-primary w-full text-center glow-green"
+              style={{ touchAction: 'manipulation', WebkitTapHighlightColor: 'transparent' }}
             >
               Get a Quote
             </Link>
             <Link
               href="/login"
-              onClick={() => setMenuOpen(false)}
+              onClick={close}
               className="btn-outline w-full text-center"
+              style={{ touchAction: 'manipulation', WebkitTapHighlightColor: 'transparent' }}
             >
               Log In
             </Link>

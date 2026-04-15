@@ -484,6 +484,7 @@ export default function HomePage() {
               {[
                 { label: 'Privacy Policy', href: '/privacy-policy' },
                 { label: 'Terms of Service', href: '/terms' },
+                { label: 'Booking Policies', href: '/booking-policy' },
                 { label: 'Refund Policy', href: '/refund-policy' },
                 { label: 'Shipping & Delivery', href: '/shipping-policy' },
                 { label: 'Accessibility', href: '/accessibility' },

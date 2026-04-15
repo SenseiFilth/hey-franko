@@ -485,6 +485,7 @@ export default function HomePage() {
                 { label: 'Privacy Policy', href: '/privacy-policy' },
                 { label: 'Terms & Conditions', href: '/terms' },
                 { label: 'Refund Policy', href: '/refund-policy' },
+                { label: 'Shipping & Delivery', href: '/shipping-policy' },
                 { label: 'Accessibility', href: '/accessibility' },
               ].map((l) => (
                 <Link key={l.href} href={l.href} className="hover:text-[#39d353] transition-colors">

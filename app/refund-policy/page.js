@@ -2,34 +2,62 @@ import LegalPage from '@/components/LegalPage';
 
 export const metadata = { title: 'Refund Policy | Hey Frank-O' };
 
+const H2 = ({ children }) => (
+  <h2 className="text-white text-xl font-bold mt-8 mb-2" style={{ fontFamily: 'var(--font-display)' }}>
+    {children}
+  </h2>
+);
+
 export default function RefundPolicyPage() {
   return (
     <LegalPage title="Refund Policy">
-      <p>This Refund Policy outlines the terms under which refunds may be issued for services provided by Hey Frank-O. By booking any service, you agree to this policy.</p>
+      <p>
+        All sales and bookings made with Hey Frank-O are <span className="text-white/90 font-semibold">final and non-refundable</span>. By booking or purchasing any service, you acknowledge and agree to this policy in full.
+      </p>
 
-      <h2 className="text-white text-xl font-bold mt-8 mb-2" style={{ fontFamily: 'var(--font-display)' }}>1. General Policy</h2>
-      <p>All sales are considered final unless otherwise stated. Refunds are not guaranteed and are issued at the sole discretion of Hey Frank-O.</p>
+      <H2>1. No Refund Policy</H2>
+      <p>
+        Hey Frank-O does not issue refunds for any services rendered, deposits paid, or bookings confirmed. This applies to all service categories including but not limited to DJ services, audio/visual production, equipment rentals, lighting, live sound, beauty services, consultations, and workshops.
+      </p>
+      <p>
+        Once a booking is confirmed and a deposit or payment is received, those funds are non-refundable regardless of the reason for cancellation, rescheduling, or non-attendance.
+      </p>
 
-      <h2 className="text-white text-xl font-bold mt-8 mb-2" style={{ fontFamily: 'var(--font-display)' }}>2. Eligible Refund Situations</h2>
-      <p>Refunds may be granted when: a service is cancelled by Hey Frank-O, there is a failure to deliver due to provider unavailability, a verified technical or scheduling error occurs on our end, or there is a duplicate charge or billing error.</p>
+      <H2>2. Cancellations by Client</H2>
+      <p>
+        Cancellations initiated by the client — for any reason, including personal emergencies, scheduling conflicts, or change of plans — are not eligible for a refund. No-shows and late cancellations are also non-refundable. Repeated cancellations may result in refusal of future services.
+      </p>
 
-      <h2 className="text-white text-xl font-bold mt-8 mb-2" style={{ fontFamily: 'var(--font-display)' }}>3. Client Cancellations</h2>
-      <p>Cancellations within the allowed booking window may be eligible for a partial or full refund. Late cancellations and no-shows are generally non-refundable. Deposits may be non-refundable unless stated otherwise at booking.</p>
+      <H2>3. Service-Specific Terms</H2>
+      <p><span className="text-white/80 font-semibold">Event, DJ, and A/V Services:</span> Non-refundable once booked. On-site cancellations forfeit all payments made.</p>
+      <p><span className="text-white/80 font-semibold">Equipment Rentals:</span> Non-refundable once equipment has been delivered, picked up, or reserved. Loss, theft, or damage during the rental period will result in additional charges.</p>
+      <p><span className="text-white/80 font-semibold">Beauty &amp; Personal Care:</span> Non-refundable once an appointment is booked or a service is delivered. Missed appointments are non-refundable.</p>
+      <p><span className="text-white/80 font-semibold">Consultations &amp; Workshops:</span> Non-refundable once scheduled or delivered, whether in person or virtually.</p>
 
-      <h2 className="text-white text-xl font-bold mt-8 mb-2" style={{ fontFamily: 'var(--font-display)' }}>4. Service-Specific Terms</h2>
-      <p><span className="text-white/80 font-semibold">Event, DJ, and A/V Services:</span> Cancellations close to the service date may incur partial or full charges. On-site cancellations are non-refundable.</p>
-      <p><span className="text-white/80 font-semibold">Equipment Rentals:</span> No refunds once equipment has been delivered or picked up. Damage or late returns result in additional charges.</p>
-      <p><span className="text-white/80 font-semibold">Beauty & Personal Care:</span> Services are non-refundable once completed. Missed appointments are non-refundable.</p>
-      <p><span className="text-white/80 font-semibold">Consultations & Workshops:</span> Non-refundable once the session has started or been delivered.</p>
+      <H2>4. Exceptions</H2>
+      <p>
+        Hey Frank-O reserves the sole discretion to issue a credit or partial refund only in the following limited circumstances:
+      </p>
+      <p>Service cancelled directly by Hey Frank-O due to provider unavailability, a verified billing or duplicate charge error caused by our systems, or a documented failure to deliver the agreed service with no reasonable alternative offered.</p>
+      <p>Any exception is issued as a service credit toward a future booking, not as a cash refund, unless required by applicable law.</p>
 
-      <h2 className="text-white text-xl font-bold mt-8 mb-2" style={{ fontFamily: 'var(--font-display)' }}>5. Refund Process</h2>
-      <p>Approved refunds are issued to the original payment method only. Processing typically takes 5–10 business days. You will be notified once the refund has been initiated.</p>
+      <H2>5. Chargebacks</H2>
+      <p>
+        Initiating a chargeback or payment dispute without first contacting Hey Frank-O to attempt resolution may result in suspension of future services, additional administrative fees, and legal recovery of outstanding costs where applicable. We strongly encourage direct communication before escalating to your payment provider.
+      </p>
 
-      <h2 className="text-white text-xl font-bold mt-8 mb-2" style={{ fontFamily: 'var(--font-display)' }}>6. Chargebacks</h2>
-      <p>Initiating a chargeback without first contacting us may result in suspension of future services and legal recovery of unpaid costs. We encourage direct contact to resolve disputes first.</p>
+      <H2>6. Third-Party Platforms</H2>
+      <p>
+        If services are booked or paid through a third-party platform (such as Bookable or a payment processor), the refund policies of those platforms may also apply. Hey Frank-O is not responsible for refund decisions made by third-party systems.
+      </p>
 
-      <h2 className="text-white text-xl font-bold mt-8 mb-2" style={{ fontFamily: 'var(--font-display)' }}>7. Contact</h2>
-      <p>For refund requests: <a href="mailto:contact@HeyFranko.com" className="text-brand-green hover:text-white transition-colors">contact@HeyFranko.com</a></p>
+      <H2>7. Contact</H2>
+      <p>
+        For billing questions or to report a verified error:{' '}
+        <a href="mailto:contact@HeyFranko.com" className="text-[#39d353] hover:text-white transition-colors">
+          contact@HeyFranko.com
+        </a>
+      </p>
     </LegalPage>
   );
 }

@@ -127,24 +127,24 @@ export default function HomePage() {
     <>
       {/* ═══════════════════════════════ HERO ═══════════════════════════════ */}
       <section className="relative w-full min-h-screen overflow-hidden flex flex-col">
-        {/* Video BG */}
+        {/* Video BG — pointer-events-none: purely visual, never intercepts taps */}
         <video
           autoPlay
           muted
           loop
           playsInline
           preload="auto"
-          className="hero-video absolute inset-0 w-full h-full object-cover"
+          className="hero-video absolute inset-0 w-full h-full object-cover pointer-events-none"
           aria-hidden="true"
         >
           <source src="/hero/hero-banner.mp4" type="video/mp4" />
         </video>
 
-        {/* Overlay — stronger on mobile for legibility */}
-        <div className="absolute inset-0 bg-gradient-to-b from-black/70 via-black/40 to-black/85" />
+        {/* Gradient overlay — pointer-events-none: visual only, must NOT block taps */}
+        <div className="absolute inset-0 bg-gradient-to-b from-black/70 via-black/40 to-black/85 pointer-events-none" />
 
-        {/* Headline only — lower on mobile (pt-28) to clear the logo-free navbar space */}
-        <div className="relative z-10 flex flex-col items-center text-center px-5 sm:px-8 pt-28 sm:pt-24">
+        {/* Headline — z-20 to sit clearly above all overlays */}
+        <div className="relative z-20 flex flex-col items-center text-center px-5 sm:px-8 pt-28 sm:pt-24">
           <h1
             className="hero-fade hero-fade-delay-1 text-white font-black uppercase leading-[0.95]"
             style={{
@@ -160,12 +160,11 @@ export default function HomePage() {
           </h1>
         </div>
 
-        {/* Middle spacer — lets the animated logo graphic own the center */}
-        <div className="flex-1" />
+        {/* Middle spacer — pointer-events-none: never intercepts taps */}
+        <div className="flex-1 pointer-events-none" />
 
-        {/* Eyebrow + CTAs — absolute on mobile so position is directly controllable */}
-        <div className="absolute sm:relative bottom-36 sm:bottom-auto left-0 right-0 sm:pb-24 z-10 flex flex-col items-center gap-4 px-5">
-          {/* Eyebrow sits just above the buttons */}
+        {/* Eyebrow + CTAs — z-20, pointer-events-auto, in normal flow for reliable taps */}
+        <div className="relative z-20 flex flex-col items-center gap-4 px-5 pb-36 sm:pb-24 pointer-events-auto">
           <p
             className="hero-fade hero-fade-delay-2 text-[#39d353] uppercase tracking-[0.3em] text-xs sm:text-sm font-semibold"
             style={{ fontFamily: 'var(--font-display)' }}
@@ -173,19 +172,18 @@ export default function HomePage() {
             Charlotte, NC · Events &amp; Services
           </p>
 
-          {/* CTAs */}
           <div className="hero-fade hero-fade-delay-3 flex flex-col sm:flex-row gap-4 justify-center items-center w-full">
-          <Link href="/get-a-quote" className="btn-primary glow-green w-full sm:w-auto max-w-xs sm:max-w-none">
-            Get a Quote
-          </Link>
-          <Link href="/book-consultation" className="btn-outline w-full sm:w-auto max-w-xs sm:max-w-none">
-            Book a Consultation
-          </Link>
+            <Link href="/get-a-quote" className="btn-primary glow-green w-full sm:w-auto max-w-xs sm:max-w-none">
+              Get a Quote
+            </Link>
+            <Link href="/book-consultation" className="btn-outline w-full sm:w-auto max-w-xs sm:max-w-none">
+              Book a Consultation
+            </Link>
           </div>
         </div>
 
-        {/* Scroll cue — desktop only */}
-        <div className="hidden sm:flex absolute bottom-8 left-1/2 -translate-x-1/2 flex-col items-center gap-2 z-10 animate-bounce">
+        {/* Scroll cue — desktop only, pointer-events-none */}
+        <div className="hidden sm:flex absolute bottom-8 left-1/2 -translate-x-1/2 flex-col items-center gap-2 z-20 animate-bounce pointer-events-none">
           <span
             className="text-white/40 text-[10px] uppercase tracking-[0.2em]"
             style={{ fontFamily: 'var(--font-display)' }}
@@ -212,9 +210,9 @@ export default function HomePage() {
           />
         </div>
 
-        {/* Edge accents */}
-        <div className="absolute top-0 inset-x-0 h-px bg-gradient-to-r from-transparent via-[#39d353]/50 to-transparent" />
-        <div className="absolute bottom-0 inset-x-0 h-px bg-gradient-to-r from-transparent via-[#f5e114]/30 to-transparent" />
+        {/* Edge accents — pointer-events-none: decorative only */}
+        <div className="absolute top-0 inset-x-0 h-px bg-gradient-to-r from-transparent via-[#39d353]/50 to-transparent pointer-events-none" />
+        <div className="absolute bottom-0 inset-x-0 h-px bg-gradient-to-r from-transparent via-[#f5e114]/30 to-transparent pointer-events-none" />
 
         <div className="relative max-w-4xl mx-auto text-center">
           <p
@@ -358,11 +356,11 @@ export default function HomePage() {
           className="object-cover object-center"
           priority={false}
         />
-        <div className="absolute inset-0 bg-gradient-to-r from-black/70 via-black/30 to-black/70" />
-        <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent" />
+        <div className="absolute inset-0 bg-gradient-to-r from-black/70 via-black/30 to-black/70 pointer-events-none" />
+        <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent pointer-events-none" />
 
         {/* Headline — sits near the very top of the banner */}
-        <div className="absolute top-0 left-0 right-0 flex justify-center pt-4 sm:pt-5 px-5">
+        <div className="absolute top-0 left-0 right-0 flex justify-center pt-4 sm:pt-5 px-5 pointer-events-none">
           <h2
             className="text-white font-black uppercase drop-shadow-2xl text-center"
             style={{ fontFamily: 'var(--font-display)', fontSize: 'clamp(1.8rem, 5vw, 4rem)' }}

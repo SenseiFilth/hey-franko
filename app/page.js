@@ -121,11 +121,10 @@ export default function HomePage() {
         {/* Overlay — stronger on mobile for legibility */}
         <div className="absolute inset-0 bg-gradient-to-b from-black/70 via-black/40 to-black/85" />
 
-        {/* Text — hugs the navbar, middle stays open for the graphic */}
+        {/* Headline only — hugs the navbar */}
         <div className="relative z-10 flex flex-col items-center text-center px-5 sm:px-8 pt-20 sm:pt-24">
-          {/* Headline */}
           <h1
-            className="hero-fade hero-fade-delay-1 text-white font-black uppercase leading-[0.95] mb-3"
+            className="hero-fade hero-fade-delay-1 text-white font-black uppercase leading-[0.95]"
             style={{
               fontFamily: 'var(--font-display)',
               fontSize: 'clamp(3rem, 12vw, 8.5rem)',
@@ -135,27 +134,30 @@ export default function HomePage() {
             Need a&nbsp;
             <span className="gradient-text">Hand?</span>
           </h1>
+        </div>
 
-          {/* Eyebrow — right under headline */}
+        {/* Middle spacer — lets the animated logo graphic own the center */}
+        <div className="flex-1" />
+
+        {/* Eyebrow + CTAs — stacked just above the bottom */}
+        <div className="relative z-10 flex flex-col items-center gap-4 px-5 pb-20 sm:pb-24">
+          {/* Eyebrow sits just above the buttons */}
           <p
             className="hero-fade hero-fade-delay-2 text-[#39d353] uppercase tracking-[0.3em] text-xs sm:text-sm font-semibold"
             style={{ fontFamily: 'var(--font-display)' }}
           >
             Charlotte, NC · Events &amp; Services
           </p>
-        </div>
 
-        {/* Middle spacer — lets the animated logo graphic own the center */}
-        <div className="flex-1" />
-
-        {/* CTAs — pinned to the bottom, fully detached from the text */}
-        <div className="relative z-10 flex flex-col sm:flex-row gap-4 justify-center items-center px-5 pb-20 sm:pb-24 hero-fade hero-fade-delay-3">
+          {/* CTAs */}
+          <div className="hero-fade hero-fade-delay-3 flex flex-col sm:flex-row gap-4 justify-center items-center w-full">
           <Link href="/get-a-quote" className="btn-primary glow-green w-full sm:w-auto max-w-xs sm:max-w-none">
             Get a Quote
           </Link>
           <Link href="/book-consultation" className="btn-outline w-full sm:w-auto max-w-xs sm:max-w-none">
             Book a Consultation
           </Link>
+          </div>
         </div>
 
         {/* Scroll cue */}
@@ -335,8 +337,8 @@ export default function HomePage() {
         <div className="absolute inset-0 bg-gradient-to-r from-black/70 via-black/30 to-black/70" />
         <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent" />
 
-        {/* Headline — hugs the top of the banner */}
-        <div className="absolute top-0 left-0 right-0 flex justify-center pt-7 sm:pt-9 px-5">
+        {/* Headline — sits near the very top of the banner */}
+        <div className="absolute top-0 left-0 right-0 flex justify-center pt-4 sm:pt-5 px-5">
           <h2
             className="text-white font-black uppercase drop-shadow-2xl text-center"
             style={{ fontFamily: 'var(--font-display)', fontSize: 'clamp(1.8rem, 5vw, 4rem)' }}

@@ -1,32 +1,34 @@
 /**
  * POST /api/contact
  *
- * Handles the Contact Widget form submission.
- * Pipeline: rate limit → bot check → sanitize → validate → send email
+ * Contact widget form handler.
+ * Pipeline: rate limit → honeypot → sanitize → validate → send email
  *
- * Email provider: Resend (https://resend.com — free tier: 100 emails/day)
- * Install when ready: npm install resend
+ * Email: when you're ready, run `npm install resend` and add RESEND_API_KEY
+ * to your Vercel environment variables. Until then, submissions are logged.
  */
 
 import { NextResponse } from 'next/server';
 import { sanitizeBody, isValidEmail, isBot } from '@/lib/sanitize';
 import { checkRateLimit, getIP } from '@/lib/rateLimit';
 
-export const runtime = 'edge'; // runs on Vercel Edge — fastest cold start
+// Node.js runtime — required for module-level state (rate limiter Map)
+// and for reliable package compatibility.
+export const runtime = 'nodejs';
 
 export async function POST(request) {
-  // ── 1. Rate limit: 3 submissions per IP per 10 minutes ────────────────
+  // 1. Rate limit — 3 per IP per 10 minutes
   const ip = getIP(request);
-  const limit = await checkRateLimit(`contact:${ip}`, { limit: 3, windowMs: 10 * 60_000 });
+  const { success } = checkRateLimit(`contact:${ip}`, { limit: 3, windowMs: 10 * 60_000 });
 
-  if (!limit.success) {
+  if (!success) {
     return NextResponse.json(
       { error: 'Too many requests. Please wait a few minutes.' },
       { status: 429, headers: { 'Retry-After': '600' } }
     );
   }
 
-  // ── 2. Parse body ──────────────────────────────────────────────────────
+  // 2. Parse body
   let raw;
   try {
     raw = await request.json();
@@ -34,18 +36,15 @@ export async function POST(request) {
     return NextResponse.json({ error: 'Invalid request.' }, { status: 400 });
   }
 
-  // ── 3. Honeypot check ─────────────────────────────────────────────────
-  //    The form includes a hidden <input name="website"> field.
-  //    Bots fill it; real users never see or touch it.
+  // 3. Honeypot — bots fill hidden fields, humans don't
   if (isBot(raw.website)) {
-    // Return 200 to not tip off bots that they were caught
-    return NextResponse.json({ ok: true });
+    return NextResponse.json({ ok: true }); // silent discard
   }
 
-  // ── 4. Sanitize ────────────────────────────────────────────────────────
+  // 4. Sanitize all string fields
   const body = sanitizeBody(raw);
 
-  // ── 5. Validate required fields ────────────────────────────────────────
+  // 5. Validate required fields
   const errors = {};
   if (!body.name || body.name.length < 2) errors.name = 'Name is required.';
   if (!isValidEmail(body.email)) errors.email = 'A valid email is required.';
@@ -55,10 +54,9 @@ export async function POST(request) {
     return NextResponse.json({ error: 'Validation failed.', fields: errors }, { status: 422 });
   }
 
-  // ── 6. Send email ──────────────────────────────────────────────────────
-  const contactEmail = process.env.CONTACT_EMAIL ?? 'contact@HeyFranko.com';
+  // 6. Send email
+  const to = process.env.CONTACT_EMAIL ?? 'contact@HeyFranko.com';
 
-  // ── Resend (production) ───────────────────────────────────────────────
   if (process.env.RESEND_API_KEY) {
     try {
       const { Resend } = await import('resend');
@@ -66,25 +64,22 @@ export async function POST(request) {
 
       await resend.emails.send({
         from: 'Hey Frank-O Website <noreply@heyfranko.com>',
-        to: contactEmail,
+        to,
         replyTo: body.email,
         subject: `New message from ${body.name}`,
         text: [
-          `Name: ${body.name}`,
-          `Email: ${body.email}`,
-          `Message:\n${body.message}`,
-          `---`,
-          `Submitted from: ${request.headers.get('referer') ?? 'unknown'}`,
-          `IP: ${ip}`,
+          `Name:    ${body.name}`,
+          `Email:   ${body.email}`,
+          `Message: ${body.message}`,
         ].join('\n'),
       });
     } catch (err) {
-      console.error('[contact] email send failed:', err);
-      return NextResponse.json({ error: 'Failed to send message. Try again.' }, { status: 500 });
+      console.error('[contact] send failed:', err?.message);
+      return NextResponse.json({ error: 'Failed to send. Please try again.' }, { status: 500 });
     }
   } else {
-    // Dev: just log (no email sent)
-    console.log('[contact] DEV submission — no RESEND_API_KEY set:', body);
+    // No API key set — log locally so the form still "works" during dev
+    console.log('[contact] no RESEND_API_KEY — would send to', to, body);
   }
 
   return NextResponse.json({ ok: true });

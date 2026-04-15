@@ -1,0 +1,541 @@
+heyfranko.md
+
+I am remastering a website for a client company named Hey Frank O. They offer various services included in the following information. They use bookable to book their appointments and have a shop for renting lighting/AV equipment, buying clothing and various beauty services. I will provide all needed context for you to remaster the website. I also noticed certain inefficiencies and redundancies within the current company website ux/ui flow that we could tighten up on to give a smoother more enjoyable experience for possible customers.
+
+The current website also features a little persistent button in the bottom right that says contact us. When clicked it pulls up a small card for customers to enter info and send a message. Here is the text in the hey frank o chat:
+
+To send us a message, first leave your contact info so we can get back to you.
+Name
+Make sure to add your name.
+Email
+Message
+Submit
+
+
+Here are all yourl needed graphics and art: C:\Users\tyson\OneDrive\Documents\Dev Projects\Hey 
+FrankO\public
+
+Context for graphics: The animated hero banner will be implemented in the remaster, it centers his logo so I was thinking Having the hero text in the upper section of the screen. Which also makes me think of how we could possibly rework the navbar to not clip with the hero text while still ensuring everything looks good and feels smooth and premium.
+
+STICK TO BRAND COLORS GREEN, BLACK, WHITE, YELLOW
+
+CURRENT HEY FRANK O WEBSITE:
+
+CURRENT HEY FRANK O LANDING PAGE:
+
+Navbar Options: Home, get a quote, book a site visit/consultation, search icon (when clicked expands search bar the shows categories products, services, other pages, show all (redirects to new page to show full shop for full), Log in (login page content: Sign Up
+Already a member?Log In
+Sign up with Google
+Sign up with Facebook
+or
+Sign up with email
+)
+
+Hero Section: No text *animated branded image banner*
+
+Call to action section: black background featuring big static transparent background image of hey frank-o logo. Text: Elevate Your Events
+Expert equipment rentals and professional services for events of all sizes.
+
+2 buttons:
+Get a Quote
+Book a Site Visit/Consultation
+
+
+Services Section: HEADER AND SUBTITLE TEXT: 
+Rentals & Services 
+Dedication. Expertise. Passion.
+At Hey Frank-O we provide a comprehensive range of equipment tailored to meet all your event needs. From backline rentals to full DJ setups, we have everything to ensure your event is a success.
+
+Somewhere in this section should be the rentals button for customers to be redirected to shop to view all rental options featuring lighting fixtures, audio boards and various other equipment I’ll be providing the information for at a later date.
+
+Then there are 4 cards within this services section:
+
+Backline Rentals: We bring the gear, you bring the vibe—backline rentals that hit EVERY time—click “Get Started” and let’s rock.
+
+A/V & Lighting: If it ain’t bright, it ain’t right—A/V and lighting done RIGHT—click “Get Started” and glow up your event.
+
+DJ & Setup Services: Need a DJ for your next event—or just need the setup? We bring the DJ or the gear—click “Get Started” and let’s run it.
+
+Audio Engineer Services: We don’t guess—we mix—audio engineering that hits every time—click “Get Started” and get the sound you deserve. 
+
+Footer/Connect Section:
+
+Connect with us section featuring text box and check box for users to enter their email address:
+
+
+
+Connect With Us
+Email*
+Yes, I want to subscribe to receive discounts and coupons. *
+Subscribe
+
+Footer featuring hey franco logo and contact info:
+
+
+
+Connect With Us
+Email*
+Yes, I want to subscribe to receive discounts and coupons. *
+Subscribe
+
+980-225-1992
+contact@HeyFranko.com
+5500 Executive Center Dr. 
+Ste. 228
+Charlotte, NC 28212
+
+Facebook - https://www.facebook.com/heyfranko1
+Instagram - https://www.instagram.com/heyfranko1
+Tiktok - https://www.tiktok.com/@heyfranko
+
+Privacy Policy (links to own page) - Hey Frank-O respects your privacy and is committed to protecting your personal data in accordance with applicable privacy laws, including the General Data Protection Regulation (GDPR) and the California Consumer Privacy Act (CCPA), as amended by the CPRA.
+
+1. Scope
+This Privacy Policy applies to all users of the Hey Frank-O website and related services, including account creation, authentication, communications, and booking integrations.
+
+2. Information We Collect
+We collect the following categories of personal data:
+a. Information You Provide
+Full name
+Email address
+Authentication data (Google, Facebook, or email-based login credentials)
+Communication content (support inquiries, messages, form submissions)
+Booking-related information (processed via third-party provider)
+b. Information from Third Parties
+When you sign in using third-party authentication providers (Google, Facebook), we may receive:
+Name
+Email address
+Profile identifier
+This data is provided in accordance with your privacy settings on those platforms.
+c. Automatically Collected Data
+IP address
+Device and browser information
+Usage data (pages visited, interactions, timestamps)
+Cookies and similar tracking technologies
+
+3. Legal Basis for Processing (GDPR)
+Where GDPR applies, we process personal data under the following lawful bases:
+Consent – for marketing communications and cookies where required
+Contractual necessity – to provide services you request (e.g., account access, bookings)
+Legitimate interests – to maintain, secure, and improve our services
+Legal obligation – when required to comply with applicable laws
+
+4. How We Use Your Information
+We use personal data to:
+Provide and maintain user accounts
+Authenticate users via third-party login providers
+Facilitate booking services via third-party platforms
+Send promotional communications (only where you have opted in)
+Respond to inquiries and provide customer support
+Improve website performance, functionality, and security
+Prevent fraud, abuse, or unauthorized access
+
+5. Third-Party Services
+We rely on third-party processors, including but not limited to:
+Google (authentication services)
+Meta/Facebook (authentication services)
+Bookable (booking and scheduling services)
+These providers process data under their own privacy policies. We encourage users to review their terms before use.
+We do not control and are not responsible for the privacy practices of third-party services.
+
+6. Data Retention
+We do not retain personal data indefinitely.
+We retain personal information only for as long as necessary to:
+Fulfill the purposes outlined in this Policy
+Comply with legal obligations
+Resolve disputes and enforce agreements
+When data is no longer required, it is deleted or anonymized where feasible.
+
+7. Data Sharing and Disclosure
+We do not sell, rent, or trade personal data.
+We may share personal information only in the following cases:
+With service providers acting on our behalf (processors)
+To comply with legal obligations or lawful requests
+To protect rights, safety, or prevent fraudulent activity
+In connection with a business transfer (e.g., merger or acquisition)
+
+8. Your Rights
+a. GDPR Rights (EEA/UK Users)
+You have the right to:
+Access your personal data
+Request correction of inaccurate data
+Request deletion (“right to be forgotten”)
+Restrict or object to processing
+Data portability
+Withdraw consent at any time (where processing is based on consent)
+b. CCPA/CPRA Rights (California Residents)
+You have the right to:
+Know what personal data is collected and how it is used
+Request deletion of personal data
+Correct inaccurate personal data
+Opt out of the “sale” or “sharing” of personal information (Note: We do not sell or share personal information as defined by law)
+Non-discrimination for exercising your privacy rights
+To exercise any rights, contact us at: [Insert Contact Email]
+We will verify your identity before processing requests as required by law.
+
+9. Marketing Communications
+We only send promotional emails where you have explicitly opted in.
+You may withdraw consent at any time by:
+Clicking “unsubscribe” in any email
+Contacting us directly
+
+10. Cookies & Tracking Technologies
+We use cookies and similar technologies to:
+Enable core site functionality
+Analyze traffic and usage patterns
+Improve user experience
+Where required by law, non-essential cookies are used only with your consent. You may control cookie preferences via your browser settings or site controls.
+
+11. Data Security
+We implement reasonable administrative, technical, and organizational safeguards to protect personal data against unauthorized access, loss, misuse, or disclosure.
+However, no system is completely secure, and we cannot guarantee absolute security.
+
+12. Children’s Privacy
+Our services are not directed to individuals under 13, and we do not knowingly collect personal data from children. If we become aware that data has been collected from a child without verified parental consent, we will delete it promptly.
+
+13. International Data Transfers
+If you access our services from outside the United States, your data may be transferred to and processed in countries that may not provide the same level of data protection as your jurisdiction.
+Where required, we implement appropriate safeguards for such transfers.
+
+14. Changes to This Policy
+We may update this Privacy Policy periodically. Updates will be posted with a revised “Effective Date.”
+
+15. Contact Information
+For privacy-related inquiries or to exercise your rights:
+Email: contact@HeyFranko.com
+ Company: Hey Frank-O
+
+Accessibility Statement (links to own page) - Hey Frank-O is committed to ensuring digital accessibility for all users, including individuals with disabilities. We are continually improving the user experience for everyone and applying relevant accessibility standards to enhance usability and inclusivity.
+
+1. Our Commitment
+We strive to ensure that our website and digital services are accessible and usable by as many people as possible, regardless of ability or assistive technology.
+Our goal is to conform to the Web Content Accessibility Guidelines (WCAG) 2.1 Level AA, which provides guidance on making web content more accessible for people with a wide range of disabilities, including visual, auditory, cognitive, and motor impairments.
+
+2. Accessibility Features
+To support accessibility, our website may include:
+Keyboard navigability for core functions
+Screen reader compatibility
+Proper heading structure and semantic HTML
+Sufficient color contrast between text and backgrounds
+Alternative text for meaningful images
+Responsive design for mobile and assistive technologies
+Clear labels for forms and interactive elements
+We aim to design and develop features with accessibility in mind from the ground up.
+
+3. Ongoing Improvements
+Accessibility is an ongoing effort. We regularly:
+Review our website for accessibility issues
+Test with assistive technologies where possible
+Update components to improve usability and compliance
+Incorporate user feedback into design improvements
+Despite our efforts, some content may not yet fully meet all accessibility standards. We are actively working to address these areas.
+
+4. Third-Party Content
+Some features or services on our website may be provided by third parties (such as booking tools or authentication providers). We do not control the accessibility of third-party platforms but encourage providers to maintain accessible services.
+
+5. Feedback and Assistance
+We welcome feedback on the accessibility of Hey Frank-O. If you experience any barriers or difficulty accessing content, please contact us so we can assist you.
+We aim to respond to accessibility inquiries promptly and work toward resolving issues in a timely manner.
+Contact Email: [Insert Contact Email]
+When contacting us, please include:
+The page or feature you were trying to access
+The issue you encountered
+The device or assistive technology you were using (if applicable)
+
+6. Limitations and Disclaimer
+While we strive to ensure full accessibility, some limitations may exist. We do not guarantee that all areas of the website will always be fully accessible at all times, but we are committed to continuous improvement.
+
+7. Updates to This Statement
+We may update this Accessibility Statement from time to time to reflect improvements or changes in our practices. Updates will be posted on this page with a revised effective date.
+
+Terms & Conditions (links to own page) - By accessing or using our website, booking services, or engaging with Hey Frank-O in any capacity, you agree to be bound by these Terms & Conditions. If you do not agree, you must not use our services.
+
+1. Services Provided
+
+Hey Frank-O provides a range of professional services, including but not limited to:
+
+Event & Technical Services
+DJ services for private and public events
+DJ equipment setup and installation
+Lighting and audiovisual (AV) consultation and site planning
+Lighting equipment rental and permanent installation
+Musical instrument rental and related equipment services
+Personal Care & Beauty Services
+Professional makeup consultation
+Makeup application and related cosmetic services
+Manicure services
+Skin product consultations
+Cosmetic laser services
+Facial treatments
+Foundations workshops
+Other Services
+Lawn care and outdoor maintenance services
+Additional services as listed on our website or booking platform
+
+Service availability may vary by location, scheduling, or provider discretion.
+
+2. Bookings and Third-Party Scheduling
+
+Some bookings may be processed through third-party platforms (e.g., Bookable). By booking through these systems, you also agree to the terms and privacy policies of those providers.
+
+We are not responsible for technical issues, scheduling errors, or service disruptions caused by third-party platforms.
+
+3. Payments and Pricing
+All prices are listed in USD unless otherwise stated.
+Prices are subject to change at any time without prior notice.
+Payment is required at the time of booking or service delivery unless otherwise agreed in writing.
+We reserve the right to refuse or cancel services for non-payment or suspected fraud.
+4. Cancellations and Rescheduling
+Cancellations or rescheduling must be made within the timeframe specified during booking (if applicable).
+Late cancellations or no-shows may result in partial or full charges.
+Repeated cancellations or misuse of booking privileges may result in refusal of future services.
+5. Service Conditions
+
+By using our services, you agree:
+
+To provide accurate and complete information during booking
+To ensure safe and reasonable conditions for service delivery (especially for onsite AV, DJ, lighting, or installation work)
+To comply with any safety instructions provided by staff or contractors
+
+We reserve the right to refuse service if conditions are unsafe, unlawful, or inappropriate.
+
+6. Rentals and Equipment Use
+
+For all rental services (lighting, instruments, or other equipment):
+
+You are responsible for any loss, theft, or damage during the rental period
+Equipment must be returned in the same condition it was provided, minus normal wear and tear
+Late returns may incur additional fees
+Deposits may be required and withheld in case of damage or loss
+7. Health, Safety, and Beauty Services Disclaimer
+
+Certain services (including cosmetic laser, facials, makeup, and skincare consultations) may involve skin contact or cosmetic procedures.
+
+By booking these services, you acknowledge:
+
+You are voluntarily participating in these services
+You have disclosed any relevant allergies, conditions, or sensitivities
+Results may vary and no guarantees are made regarding outcomes
+
+We are not liable for adverse reactions resulting from undisclosed conditions or misuse of recommended products.
+
+8. Limitation of Liability
+
+To the maximum extent permitted by law:
+
+Hey Frank-O is not liable for indirect, incidental, or consequential damages
+We are not responsible for venue issues, weather disruptions, or third-party failures
+Our total liability for any claim shall not exceed the amount paid for the specific service in question
+9. Intellectual Property
+
+All branding, content, designs, and materials on our website are the property of Hey Frank-O unless otherwise stated. You may not copy, reproduce, or distribute our materials without written permission.
+
+10. User Conduct
+
+You agree not to:
+
+Misuse or interfere with our website or booking systems
+Provide false or misleading information
+Harass, threaten, or endanger staff or contractors
+Use services for unlawful purposes
+
+We reserve the right to terminate services for violations.
+
+11. Third-Party Services
+
+We may use third-party providers for:
+
+Booking systems
+Payment processing
+Equipment suppliers
+Authentication services
+
+We are not responsible for the performance, policies, or actions of these third parties.
+
+12. Service Availability
+
+We do not guarantee uninterrupted availability of services, including website uptime, booking systems, or service scheduling.
+
+We reserve the right to modify, suspend, or discontinue any service at any time.
+
+13. Indemnification
+
+You agree to indemnify and hold harmless Hey Frank-O, its owners, employees, and contractors from any claims, damages, or expenses arising from your use of our services or violation of these Terms.
+
+14. Governing Law
+
+These Terms shall be governed by and interpreted in accordance with the laws of the State of [Insert State], United States, without regard to conflict of law principles.
+
+15. Changes to Terms
+
+We may update these Terms & Conditions at any time. Continued use of our services after updates constitutes acceptance of the revised Terms.
+
+16. Contact Information
+
+For questions regarding these Terms:
+
+Email: contact@HeyFranko.com
+
+Refund Policy (links to own page) - This Refund Policy outlines the terms under which refunds may be issued for services provided by Hey Frank-O, including DJ services, AV and lighting work, rentals, consultations, and personal care services.
+By booking or purchasing any service, you agree to this Refund Policy.
+
+1. General Policy
+All sales are considered final unless otherwise stated. Refunds are not guaranteed and are issued at the sole discretion of Hey Frank-O, subject to the conditions outlined below.
+
+2. Eligible Refund Situations
+Refunds may be granted in the following cases:
+Service cancellation initiated by Hey Frank-O
+Failure to deliver a scheduled service due to provider unavailability
+Verified technical or scheduling error caused by our systems or staff
+Duplicate charges or billing errors
+
+3. Client Cancellations
+Cancellations made within the allowed booking window may be eligible for a partial or full refund, depending on timing and service type.
+Late cancellations or no-shows are generally non-refundable.
+Deposits (if required) may be non-refundable unless otherwise stated at the time of booking.
+
+4. Service-Specific Refund Terms
+Event, DJ, and AV Services
+Cancellations close to the service date may incur partial or full charges due to scheduling and preparation costs.
+On-site cancellations are non-refundable.
+Equipment Rentals
+Refunds are not issued once equipment has been delivered or picked up.
+Damaged, lost, or late-returned equipment may result in additional charges rather than refunds.
+Beauty & Personal Care Services
+Services such as makeup consultations, facials, manicures, and cosmetic procedures are non-refundable once completed.
+Missed appointments are non-refundable.
+Consultations & Workshops
+Digital or in-person consultations are non-refundable once the session has started or been delivered.
+
+5. Third-Party Services
+If services are booked through third-party platforms (such as booking or payment processors), their refund policies may also apply. We are not responsible for refund decisions made by third-party systems.
+
+6. Refund Process
+If a refund is approved:
+Refunds will be issued to the original payment method only
+Processing times may vary depending on your bank or payment provider (typically 5–10 business days)
+You will be notified once the refund has been initiated
+
+7. Chargebacks
+Initiating a chargeback without first contacting us to resolve an issue may result in:
+Suspension of future services
+Additional administrative review
+Legal recovery of unpaid service costs where applicable
+We encourage customers to contact us directly to resolve disputes before initiating chargebacks.
+
+8. Changes to This Policy
+We reserve the right to update or modify this Refund Policy at any time. Continued use of our services after changes are posted constitutes acceptance of the revised policy.
+
+9. Contact
+For refund requests or billing questions:
+Email: contact@HeyFranko.com
+
+
+
+
+ 
+All Rights Reserved © 2025  by Hey Frank-O.
+
+
+GET A QUOTE PAGE: features text entry boxes, drop down menus and checkmark. submits to hey franko email
+
+
+
+Quote Form
+First Name*
+Last Name*
+Email
+Phone number*
+Event/Service Location*
+What service(s) are you interested in (Check all that apply):
+Backline Rentals
+Lighting
+DJ & DJ Setup Services
+Audio Engineering Services
+Other
+Type of event:
+Please provide event or project date and times below:
+Month
+Day
+Year
+Start time
+:
+Hours
+Minutes
+AM
+End time
+:
+Hours
+Minutes
+AM
+What is your budget?
+Add a message or tell us more about your event and what you need:
+Submit
+
+
+BOOK A SITE VISIT/CONSULTATION PAGE: features enterable text boxes, drop down menus and check boxes (i feel this ux flow may be a bit inefficient)
+
+Site Visit &
+Consultation Request
+Your Full Name*
+Organization/Venue Name*
+Email
+Phone number*
+Service Location *
+Type of service needed (Check all that apply):
+Sound system tuning
+Lighting calibration
+Livestream optimization
+Troubleshooting / diagnostics
+Training (volunteers / staff)
+Other
+Do you currently own your system?
+Yes
+No
+N/A
+Please provide preferred appointment days & times below:
+Month
+Day
+Year
+Start time
+:
+Hours
+Minutes
+AM
+End time
+:
+Hours
+Minutes
+AM
+Option 2
+Month
+Day
+Year
+Start time
+:
+Hours
+Minutes
+AM
+End time
+:
+Hours
+Minutes
+AM
+Option 3
+Month
+Day
+Year
+Start time
+:
+Hours
+Minutes
+AM
+End time
+:
+Hours
+Minutes
+AM
+Budget range for consultation:
+Describe the issue you are experiencing or tell us more about what you need:
+Submit
+

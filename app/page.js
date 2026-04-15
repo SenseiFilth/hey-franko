@@ -164,7 +164,7 @@ export default function HomePage() {
         <div className="flex-1" />
 
         {/* Eyebrow + CTAs — stacked just above the bottom */}
-        <div className="relative z-10 flex flex-col items-center gap-4 px-5 pb-5 sm:pb-24">
+        <div className="relative z-10 flex flex-col items-center gap-4 px-5 pb-0 sm:pb-24">
           {/* Eyebrow sits just above the buttons */}
           <p
             className="hero-fade hero-fade-delay-2 text-[#39d353] uppercase tracking-[0.3em] text-xs sm:text-sm font-semibold"

@@ -79,14 +79,14 @@ export default function ServicesPage() {
         </Link>
 
         {/* Header */}
-        <div className="mb-16">
+        <div className="mb-16 text-center">
           <p className="text-[#39d353] uppercase tracking-[0.25em] text-xs sm:text-sm font-semibold mb-3" style={{ fontFamily: 'var(--font-display)' }}>
             Hey Frank-O
           </p>
           <h1 className="text-white font-black uppercase mb-4" style={{ fontFamily: 'var(--font-display)', fontSize: 'clamp(2.5rem, 8vw, 6rem)' }}>
             All <span className="gradient-text">Services</span>
           </h1>
-          <p className="text-white/50 max-w-2xl leading-relaxed">
+          <p className="text-white/50 max-w-2xl leading-relaxed mx-auto">
             From event production and DJ services to church audio training, lawn care, and equipment rentals — Hey Frank-O delivers professional results across every category.
           </p>
         </div>

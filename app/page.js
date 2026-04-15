@@ -121,19 +121,11 @@ export default function HomePage() {
         {/* Overlay — stronger on mobile for legibility */}
         <div className="absolute inset-0 bg-gradient-to-b from-black/70 via-black/40 to-black/85" />
 
-        {/* Content — positioned in upper portion below navbar */}
-        <div className="relative z-10 flex flex-col items-center justify-center text-center px-5 sm:px-8 pt-28 sm:pt-36 pb-32 flex-1">
-          {/* Eyebrow */}
-          <p
-            className="hero-fade hero-fade-delay-1 text-[#39d353] uppercase tracking-[0.3em] text-xs sm:text-sm font-semibold mb-4"
-            style={{ fontFamily: 'var(--font-display)' }}
-          >
-            Charlotte, NC · Events & Services
-          </p>
-
-          {/* Headline */}
+        {/* Content — hugs the navbar, logo graphic centered below */}
+        <div className="relative z-10 flex flex-col items-center justify-start text-center px-5 sm:px-8 pt-20 sm:pt-24 pb-16 flex-1">
+          {/* Headline — sits just below navbar */}
           <h1
-            className="hero-fade hero-fade-delay-2 text-white font-black uppercase leading-[0.95] mb-5"
+            className="hero-fade hero-fade-delay-1 text-white font-black uppercase leading-[0.95] mb-3"
             style={{
               fontFamily: 'var(--font-display)',
               fontSize: 'clamp(3rem, 12vw, 8.5rem)',
@@ -144,16 +136,16 @@ export default function HomePage() {
             <span className="gradient-text">Hand?</span>
           </h1>
 
-          {/* Sub */}
+          {/* Eyebrow — sits right under the headline */}
           <p
-            className="hero-fade hero-fade-delay-3 text-white/70 text-base sm:text-lg max-w-lg mb-8 leading-relaxed"
-            style={{ fontFamily: 'var(--font-body)' }}
+            className="hero-fade hero-fade-delay-2 text-[#39d353] uppercase tracking-[0.3em] text-xs sm:text-sm font-semibold"
+            style={{ fontFamily: 'var(--font-display)' }}
           >
-            We handle the gear, the sound, and the light — so you can focus on the moment.
+            Charlotte, NC · Events &amp; Services
           </p>
 
-          {/* CTAs */}
-          <div className="hero-fade hero-fade-delay-4 flex flex-col sm:flex-row gap-4 w-full max-w-sm sm:max-w-none sm:w-auto">
+          {/* CTAs — pushed down to give the logo graphic room to breathe */}
+          <div className="hero-fade hero-fade-delay-3 flex flex-col sm:flex-row gap-4 w-full max-w-sm sm:max-w-none sm:w-auto mt-16 sm:mt-20">
             <Link href="/get-a-quote" className="btn-primary glow-green w-full sm:w-auto">
               Get a Quote
             </Link>
@@ -330,8 +322,8 @@ export default function HomePage() {
       {/* ═══════════════════════════════ BANNER STRIP ══════════════════════ */}
       <section className="relative overflow-hidden" style={{ height: 'clamp(240px, 35vw, 420px)' }}>
         <Image
-          src="/graphics/banner-1.jpg"
-          alt="Hey Frank-O turntable banner"
+          src="/graphics/banner-2.jpg"
+          alt="Hey Frank-O banner"
           fill
           sizes="100vw"
           className="object-cover object-center"

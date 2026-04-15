@@ -30,14 +30,14 @@ export default function ShopPage() {
           Back to Home
         </Link>
 
-        <div className="mb-12">
+        <div className="mb-12 text-center">
           <p className="text-[#39d353] uppercase tracking-[0.25em] text-xs sm:text-sm font-semibold mb-3" style={{ fontFamily: 'var(--font-display)' }}>
             Hey Frank-O
           </p>
           <h1 className="text-white font-black uppercase mb-4" style={{ fontFamily: 'var(--font-display)', fontSize: 'clamp(2.5rem, 7vw, 5rem)' }}>
             Shop &amp; <span className="gradient-text">Rentals</span>
           </h1>
-          <p className="text-white/50 max-w-xl leading-relaxed">
+          <p className="text-white/50 max-w-xl leading-relaxed mx-auto">
             Equipment for purchase and rental. More products being added soon — check back or{' '}
             <Link href="/get-a-quote" className="text-[#39d353] hover:text-white transition-colors">
               get in touch

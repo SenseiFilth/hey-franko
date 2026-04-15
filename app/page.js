@@ -1,7 +1,27 @@
 'use client';
-import { useEffect } from 'react';
+import { useEffect, useState } from 'react';
 import Image from 'next/image';
 import Link from 'next/link';
+
+/* ── Hero headline tags — one picked at random on each page load ── */
+const HERO_TAGS = [
+  'Need a DJ?',
+  'Need Equipment?',
+  'Need Lighting?',
+  'Throwing an Event?',
+  'Planning Something Big?',
+  'Want It Done Right?',
+  'Need a Hand?',
+  'Need Backup?',
+  'Want It Handled?',
+  'Need a Full Setup?',
+  'Need It Cleaned Up?',
+  'Need Outdoor Help?',
+  'Want It Off Your Plate?',
+  'Sound Team Struggling?',
+  'Volunteers Overwhelmed?',
+  'Training Your Sound Team?',
+];
 
 /* ── Scroll reveal ── */
 function useReveal() {
@@ -101,6 +121,12 @@ const SERVICES = [
 export default function HomePage() {
   useReveal();
 
+  // Pick a random tag on each client-side load
+  const [headline, setHeadline] = useState(HERO_TAGS[0]);
+  useEffect(() => {
+    setHeadline(HERO_TAGS[Math.floor(Math.random() * HERO_TAGS.length)]);
+  }, []);
+
   return (
     <>
       {/* ═══════════════════════════════ HERO ═══════════════════════════════ */}
@@ -131,8 +157,10 @@ export default function HomePage() {
               textShadow: '0 4px 48px rgba(0,0,0,0.7)',
             }}
           >
-            Need a&nbsp;
-            <span className="gradient-text">Hand?</span>
+            {headline.split(' ').slice(0, -1).join(' ')}&nbsp;
+            <span className="gradient-text">
+              {headline.split(' ').slice(-1)[0]}
+            </span>
           </h1>
         </div>
 

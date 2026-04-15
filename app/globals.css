@@ -142,13 +142,24 @@
   color: #fff;
 }
 
-/* ── Mobile: hero video — zoom out via scale without the full object-contain strip ── */
-/* scale(0.72) shrinks the rendered video by 28% so more content is visible.
-   The section is overflow-hidden so edges are clipped cleanly.
-   object-cover remains active so there's no black-bar "strip" effect. */
+/* ── Mobile: hero video — fill by WIDTH, center vertically ────────────────
+   Problem: portrait mobile (9:16) with landscape video (16:9) via object-cover
+   fills by HEIGHT → video is very zoomed in (shows only ~26% of video width).
+   scale() approach caused left/right black gaps.
+
+   Solution: constrain by viewport width at natural 16:9 ratio, center vertically.
+   The video strip is narrower than the screen height — dark areas above/below
+   blend into the section's existing gradient overlay seamlessly.
+   No side gaps, no black bars — a natural landscape "window" on mobile.
+──────────────────────────────────────────────────────────────────────────── */
 @media (max-width: 639px) {
   .hero-video {
-    transform: scale(0.72);
-    transform-origin: center center;
+    position: absolute;
+    width: 100%;
+    height: 100vw;     /* square crop — shows ~56% of video width, no side gaps */
+    top: 50%;
+    left: 0;
+    transform: translateY(-50%);
+    object-fit: cover; /* covers the square element fully, no bars inside the video */
   }
 }

@@ -121,9 +121,9 @@ export default function HomePage() {
         {/* Overlay — stronger on mobile for legibility */}
         <div className="absolute inset-0 bg-gradient-to-b from-black/70 via-black/40 to-black/85" />
 
-        {/* Content — hugs the navbar, logo graphic centered below */}
-        <div className="relative z-10 flex flex-col items-center justify-start text-center px-5 sm:px-8 pt-20 sm:pt-24 pb-16 flex-1">
-          {/* Headline — sits just below navbar */}
+        {/* Text — hugs the navbar, middle stays open for the graphic */}
+        <div className="relative z-10 flex flex-col items-center text-center px-5 sm:px-8 pt-20 sm:pt-24">
+          {/* Headline */}
           <h1
             className="hero-fade hero-fade-delay-1 text-white font-black uppercase leading-[0.95] mb-3"
             style={{
@@ -136,23 +136,26 @@ export default function HomePage() {
             <span className="gradient-text">Hand?</span>
           </h1>
 
-          {/* Eyebrow — sits right under the headline */}
+          {/* Eyebrow — right under headline */}
           <p
             className="hero-fade hero-fade-delay-2 text-[#39d353] uppercase tracking-[0.3em] text-xs sm:text-sm font-semibold"
             style={{ fontFamily: 'var(--font-display)' }}
           >
             Charlotte, NC · Events &amp; Services
           </p>
+        </div>
 
-          {/* CTAs — pushed down to give the logo graphic room to breathe */}
-          <div className="hero-fade hero-fade-delay-3 flex flex-col sm:flex-row gap-4 w-full max-w-sm sm:max-w-none sm:w-auto mt-16 sm:mt-20">
-            <Link href="/get-a-quote" className="btn-primary glow-green w-full sm:w-auto">
-              Get a Quote
-            </Link>
-            <Link href="/book-consultation" className="btn-outline w-full sm:w-auto">
-              Book a Consultation
-            </Link>
-          </div>
+        {/* Middle spacer — lets the animated logo graphic own the center */}
+        <div className="flex-1" />
+
+        {/* CTAs — pinned to the bottom, fully detached from the text */}
+        <div className="relative z-10 flex flex-col sm:flex-row gap-4 justify-center items-center px-5 pb-20 sm:pb-24 hero-fade hero-fade-delay-3">
+          <Link href="/get-a-quote" className="btn-primary glow-green w-full sm:w-auto max-w-xs sm:max-w-none">
+            Get a Quote
+          </Link>
+          <Link href="/book-consultation" className="btn-outline w-full sm:w-auto max-w-xs sm:max-w-none">
+            Book a Consultation
+          </Link>
         </div>
 
         {/* Scroll cue */}

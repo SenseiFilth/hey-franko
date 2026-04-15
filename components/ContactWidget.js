@@ -19,8 +19,10 @@ export default function ContactWidget() {
   };
 
   return (
-    <div className="fixed bottom-5 right-4 sm:right-6 z-50 flex flex-col items-end gap-3">
-      {/* Card */}
+    {/* Outer wrapper: pointer-events-none so the 340px-wide invisible div doesn't
+        block taps on page content beneath it. Each child opts in explicitly. */}
+    <div className="fixed bottom-5 right-4 sm:right-6 z-50 flex flex-col items-end gap-3 pointer-events-none">
+      {/* Card — pointer-events-auto only when open */}
       <div
         className={`transition-all duration-300 origin-bottom-right ${
           open
@@ -122,9 +124,10 @@ export default function ContactWidget() {
       </div>
 
       {/* FAB */}
+      {/* FAB — pointer-events-auto so it remains tappable independently */}
       <button
         onClick={() => setOpen(!open)}
-        className="flex items-center gap-2.5 bg-[#39d353] text-black font-bold px-5 py-3 rounded-full shadow-xl hover:brightness-110 transition-all active:scale-95 glow-green"
+        className="flex items-center gap-2.5 bg-[#39d353] text-black font-bold px-5 py-3 rounded-full shadow-xl hover:brightness-110 transition-all active:scale-95 glow-green pointer-events-auto"
         style={{ fontFamily: 'var(--font-display)', letterSpacing: '0.06em', fontSize: '0.9rem' }}
         aria-label={open ? 'Close contact form' : 'Open contact form'}
         aria-expanded={open}

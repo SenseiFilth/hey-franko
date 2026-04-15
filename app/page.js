@@ -334,14 +334,20 @@ export default function HomePage() {
         />
         <div className="absolute inset-0 bg-gradient-to-r from-black/70 via-black/30 to-black/70" />
         <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent" />
-        <div className="absolute inset-0 flex flex-col items-center justify-center text-center px-5">
+
+        {/* Headline — hugs the top of the banner */}
+        <div className="absolute top-0 left-0 right-0 flex justify-center pt-7 sm:pt-9 px-5">
           <h2
-            className="text-white font-black uppercase mb-5 drop-shadow-2xl"
+            className="text-white font-black uppercase drop-shadow-2xl text-center"
             style={{ fontFamily: 'var(--font-display)', fontSize: 'clamp(1.8rem, 5vw, 4rem)' }}
           >
             Ready to{' '}
             <span className="gradient-text">Rock Your Event?</span>
           </h2>
+        </div>
+
+        {/* Button — pinned to the bottom of the banner */}
+        <div className="absolute bottom-0 left-0 right-0 flex justify-center pb-7 sm:pb-9">
           <Link href="/get-a-quote" className="btn-primary glow-green">
             Start Your Quote
           </Link>

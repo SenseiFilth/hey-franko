@@ -14,6 +14,7 @@ const NAV_LINKS = [
 export default function Navbar() {
   const [scrolled, setScrolled] = useState(false);
   const [menuOpen, setMenuOpen] = useState(false);
+  const [menuMounted, setMenuMounted] = useState(false); // separate mount state for clean DOM removal
   const [searchOpen, setSearchOpen] = useState(false);
   const [query, setQuery] = useState('');
   const searchRef = useRef(null);
@@ -34,8 +35,19 @@ export default function Navbar() {
     return () => window.removeEventListener('resize', onResize);
   }, []);
 
+  // Mount/unmount overlay cleanly — fixes backdrop-filter + pointer-events:none
+  // bug where fixed+inset-0 elements still intercept mobile touches even when
+  // pointer-events:none is set, due to backdrop-filter compositing layer.
   useEffect(() => {
-    document.body.style.overflow = menuOpen ? 'hidden' : '';
+    if (menuOpen) {
+      setMenuMounted(true);
+      document.body.style.overflow = 'hidden';
+    } else {
+      document.body.style.overflow = '';
+      // Brief delay so CSS fade-out plays before element is removed from DOM
+      const t = setTimeout(() => setMenuMounted(false), 260);
+      return () => clearTimeout(t);
+    }
     return () => { document.body.style.overflow = ''; };
   }, [menuOpen]);
 
@@ -145,21 +157,20 @@ export default function Navbar() {
       </header>
 
       {/* ── Mobile Menu ─────────────────────────────────────────────────────
-          z-[60] places it ABOVE the header (z-50) so no tap interception.
-          visibility + opacity instead of opacity-only fixes iOS touch timing.
+          Conditionally rendered: only exists in DOM when menuMounted=true.
+          This is the only reliable fix for the backdropFilter+pointer-events
+          bug where fixed+inset-0 overlays still intercept mobile touches.
+          menuMounted stays true for 260ms after close to allow fade-out.
       ────────────────────────────────────────────────────────────────────── */}
+      {menuMounted && (
       <div
-        className="fixed inset-0 md:hidden flex flex-col"
+        className="fixed inset-0 flex flex-col"
         style={{
           zIndex: 60,
           background: 'rgba(9,9,9,0.98)',
           backdropFilter: 'blur(12px)',
-          // visibility + opacity: visibility:hidden removes element from tap order
-          // while opacity:0 fades; visibility:visible restores it instantly on open
-          visibility: menuOpen ? 'visible' : 'hidden',
           opacity: menuOpen ? 1 : 0,
-          transition: 'opacity 0.25s ease, visibility 0.25s ease',
-          pointerEvents: menuOpen ? 'auto' : 'none',
+          transition: 'opacity 0.25s ease',
         }}
         aria-hidden={!menuOpen}
       >
@@ -206,6 +217,7 @@ export default function Navbar() {
           </div>
         </div>
       </div>
+      )}
     </>
   );
 }

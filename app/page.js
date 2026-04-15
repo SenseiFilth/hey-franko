@@ -34,6 +34,7 @@ const SERVICES = [
     subtitle: 'We bring the gear, you bring the vibe.',
     body: 'Full backline solutions that hit every time — amps, drums, keyboards, and more. Whatever the stage demands, we deliver.',
     color: 'green',
+    href: '/get-a-quote',
   },
   {
     icon: (
@@ -45,6 +46,7 @@ const SERVICES = [
     subtitle: "If it ain't bright, it ain't right.",
     body: 'Professional A/V systems and lighting rigs designed to transform any venue. From subtle ambiance to full spectacle.',
     color: 'yellow',
+    href: '/get-a-quote',
   },
   {
     icon: (
@@ -56,6 +58,7 @@ const SERVICES = [
     subtitle: 'The DJ or just the rig — we run it.',
     body: "Need a DJ for your next event or just the setup? We bring the energy and the equipment. Let's run it.",
     color: 'green',
+    href: '/get-a-quote',
   },
   {
     icon: (
@@ -67,6 +70,31 @@ const SERVICES = [
     subtitle: "We don't guess — we mix.",
     body: 'Precision audio engineering that hits every time. Expert mixing, tuning, and mastering so your event sounds exactly right.',
     color: 'yellow',
+    href: '/get-a-quote',
+  },
+  {
+    icon: (
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={1.5} className="w-8 h-8">
+        <path strokeLinecap="round" strokeLinejoin="round" d="M4.26 10.147a60.436 60.436 0 00-.491 6.347A48.627 48.627 0 0112 20.904a48.627 48.627 0 018.232-4.41 60.46 60.46 0 00-.491-6.347m-15.482 0a50.57 50.57 0 00-2.658-.813A59.905 59.905 0 0112 3.493a59.902 59.902 0 0110.399 5.84c-.896.248-1.783.52-2.658.814m-15.482 0A50.697 50.697 0 0112 13.489a50.702 50.702 0 017.74-3.342M6.75 15a.75.75 0 100-1.5.75.75 0 000 1.5zm0 0v-3.675A55.378 55.378 0 0112 8.443m-7.007 11.55A5.981 5.981 0 006.75 15.75v-1.5" />
+      </svg>
+    ),
+    title: 'Church Audio Training',
+    subtitle: 'Sound that serves the room.',
+    body: 'Hands-on Behringer X32 training for church sound volunteers. We build confident sound teams — fast.',
+    color: 'green',
+    href: '/church-audio-training',
+  },
+  {
+    icon: (
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={1.5} className="w-8 h-8">
+        <path strokeLinecap="round" strokeLinejoin="round" d="M12 21a9.004 9.004 0 008.716-6.747M12 21a9.004 9.004 0 01-8.716-6.747M12 21c2.485 0 4.5-4.03 4.5-9S14.485 3 12 3m0 18c-2.485 0-4.5-4.03-4.5-9S9.515 3 12 3m0 0a8.997 8.997 0 017.843 4.582M12 3a8.997 8.997 0 00-7.843 4.582m15.686 0A11.953 11.953 0 0112 10.5c-2.998 0-5.74-1.1-7.843-2.918m15.686 0A8.959 8.959 0 0121 12c0 .778-.099 1.533-.284 2.253m0 0A17.919 17.919 0 0112 16.5c-3.162 0-6.133-.815-8.716-2.247m0 0A9.015 9.015 0 013 12c0-1.605.42-3.113 1.157-4.418" />
+      </svg>
+    ),
+    title: 'Lawn Care',
+    subtitle: 'Property care at your doorstep.',
+    body: 'Consultations, weekly mowing, and leaf removal for residential properties. Starting at $49.',
+    color: 'yellow',
+    href: '/lawn-care',
   },
 ];
 
@@ -231,11 +259,11 @@ export default function HomePage() {
           </div>
 
           {/* Cards */}
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-5">
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5">
             {SERVICES.map((svc, i) => (
               <div
                 key={svc.title}
-                className={`reveal reveal-delay-${i + 1} group relative bg-[#161616] border border-white/5 rounded-2xl p-6 sm:p-7 flex flex-col gap-4 transition-all duration-300 hover:border-[#39d353]/40 hover:-translate-y-1 hover:shadow-[0_8px_32px_rgba(57,211,83,0.08)]`}
+                className={`reveal reveal-delay-${Math.min(i + 1, 4)} group relative bg-[#161616] border border-white/5 rounded-2xl p-6 sm:p-7 flex flex-col gap-4 transition-all duration-300 hover:border-[#39d353]/40 hover:-translate-y-1 hover:shadow-[0_8px_32px_rgba(57,211,83,0.08)]`}
               >
                 {/* Top shine */}
                 <div
@@ -261,7 +289,7 @@ export default function HomePage() {
                 </div>
 
                 <Link
-                  href="/get-a-quote"
+                  href={svc.href}
                   className={`inline-flex items-center gap-2 text-sm font-semibold uppercase tracking-wider transition-colors duration-200 ${
                     svc.color === 'green'
                       ? 'text-[#39d353] hover:text-white'
@@ -281,6 +309,20 @@ export default function HomePage() {
                 </Link>
               </div>
             ))}
+          </div>
+
+          {/* View All Services link */}
+          <div className="reveal flex justify-center mt-12">
+            <Link
+              href="/services"
+              className="inline-flex items-center gap-2 text-white/50 hover:text-[#39d353] transition-colors text-sm font-semibold uppercase tracking-wider"
+              style={{ fontFamily: 'var(--font-display)' }}
+            >
+              View All Services
+              <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" />
+              </svg>
+            </Link>
           </div>
         </div>
       </section>

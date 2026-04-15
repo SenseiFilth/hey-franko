@@ -1,4 +1,5 @@
 import Link from 'next/link';
+import Image from 'next/image';
 
 export const metadata = { title: 'Shop | Hey Frank-O' };
 
@@ -63,14 +64,15 @@ export default function ShopPage() {
               key={product.id}
               className="bg-[#161616] border border-white/5 rounded-2xl overflow-hidden hover:border-[#39d353]/40 transition-all duration-300 hover:-translate-y-1 flex flex-col"
             >
-              {/* Placeholder image area */}
-              <div className="aspect-square bg-[#1a1a1a] flex flex-col items-center justify-center border-b border-white/5">
-                <svg className="w-16 h-16 text-white/10 mb-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1} d="M9 9l10.5-3m0 6.553v3.75a2.25 2.25 0 01-1.632 2.163l-1.32.377a1.803 1.803 0 11-.99-3.467l2.31-.66a2.25 2.25 0 001.632-2.163zm0 0V2.25L9 5.25v10.303m0 0v3.75a2.25 2.25 0 01-1.632 2.163l-1.32.377a1.803 1.803 0 01-.99-3.467l2.31-.66A2.25 2.25 0 009 15.553z" />
-                </svg>
-                <span className="text-white/20 text-xs uppercase tracking-wider" style={{ fontFamily: 'var(--font-display)' }}>
-                  Image coming soon
-                </span>
+              {/* Product image */}
+              <div className="aspect-square bg-white relative overflow-hidden border-b border-white/5">
+                <Image
+                  src="/graphics/bass.png"
+                  alt={product.name}
+                  fill
+                  sizes="(max-width: 640px) 100vw, 33vw"
+                  className="object-contain p-6"
+                />
               </div>
 
               <div className="p-6 flex flex-col gap-3 flex-1">

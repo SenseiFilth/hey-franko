@@ -134,7 +134,7 @@ export default function HomePage() {
           loop
           playsInline
           preload="auto"
-          className="absolute inset-0 w-full h-full object-contain sm:object-cover"
+          className="hero-video absolute inset-0 w-full h-full object-cover"
           aria-hidden="true"
         >
           <source src="/hero/hero-banner.mp4" type="video/mp4" />
@@ -164,7 +164,7 @@ export default function HomePage() {
         <div className="flex-1" />
 
         {/* Eyebrow + CTAs — stacked just above the bottom */}
-        <div className="relative z-10 flex flex-col items-center gap-4 px-5 pb-20 sm:pb-24">
+        <div className="relative z-10 flex flex-col items-center gap-4 px-5 pb-12 sm:pb-24">
           {/* Eyebrow sits just above the buttons */}
           <p
             className="hero-fade hero-fade-delay-2 text-[#39d353] uppercase tracking-[0.3em] text-xs sm:text-sm font-semibold"
@@ -184,8 +184,8 @@ export default function HomePage() {
           </div>
         </div>
 
-        {/* Scroll cue */}
-        <div className="absolute bottom-8 left-1/2 -translate-x-1/2 flex flex-col items-center gap-2 z-10 animate-bounce">
+        {/* Scroll cue — desktop only */}
+        <div className="hidden sm:flex absolute bottom-8 left-1/2 -translate-x-1/2 flex-col items-center gap-2 z-10 animate-bounce">
           <span
             className="text-white/40 text-[10px] uppercase tracking-[0.2em]"
             style={{ fontFamily: 'var(--font-display)' }}

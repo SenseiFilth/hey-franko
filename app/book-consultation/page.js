@@ -11,36 +11,53 @@ const SERVICE_TYPES = [
   'Other',
 ];
 
-function TimeSlot({ label, index }) {
+function TimePicker({ label }) {
+  return (
+    <div>
+      <label className="text-white/40 text-xs mb-1.5 block">{label}</label>
+      {/* Stack HH : MM | AM/PM on a single row using a grid so nothing overflows */}
+      <div className="grid grid-cols-[1fr_auto_1fr_1fr] gap-1.5 items-center">
+        <input
+          placeholder="HH"
+          maxLength={2}
+          className="form-input text-center text-sm min-w-0"
+          style={{ fontSize: '16px' }}
+        />
+        <span className="text-white/40 text-sm font-bold">:</span>
+        <input
+          placeholder="MM"
+          maxLength={2}
+          className="form-input text-center text-sm min-w-0"
+          style={{ fontSize: '16px' }}
+        />
+        <select
+          className="form-input text-sm min-w-0"
+          style={{ fontSize: '16px' }}
+        >
+          <option>AM</option>
+          <option>PM</option>
+        </select>
+      </div>
+    </div>
+  );
+}
+
+function TimeSlot({ label }) {
   return (
     <div className="bg-[#1a1a1a] rounded-xl p-4 border border-white/5">
-      <p className="text-brand-green text-xs uppercase tracking-widest mb-3 font-semibold" style={{ fontFamily: 'var(--font-display)' }}>
+      <p className="text-[#39d353] text-xs uppercase tracking-widest mb-3 font-semibold" style={{ fontFamily: 'var(--font-display)' }}>
         {label}
       </p>
-      <div className="grid grid-cols-3 gap-2 mb-3">
-        <input placeholder="Month" className="form-input text-sm" />
-        <input placeholder="Day" className="form-input text-sm" />
-        <input placeholder="Year" className="form-input text-sm" />
+      {/* Date row */}
+      <div className="grid grid-cols-3 gap-2 mb-4">
+        <input placeholder="Month" className="form-input text-sm" style={{ fontSize: '16px' }} />
+        <input placeholder="Day" className="form-input text-sm" style={{ fontSize: '16px' }} />
+        <input placeholder="Year" className="form-input text-sm" style={{ fontSize: '16px' }} />
       </div>
-      <div className="grid grid-cols-2 gap-2">
-        <div>
-          <label className="text-white/40 text-xs mb-1.5 block">Start</label>
-          <div className="flex gap-1">
-            <input placeholder="HH" maxLength={2} className="form-input w-14 text-center text-sm" />
-            <span className="text-white/40 self-center">:</span>
-            <input placeholder="MM" maxLength={2} className="form-input w-14 text-center text-sm" />
-            <select className="form-input w-16 text-sm"><option>AM</option><option>PM</option></select>
-          </div>
-        </div>
-        <div>
-          <label className="text-white/40 text-xs mb-1.5 block">End</label>
-          <div className="flex gap-1">
-            <input placeholder="HH" maxLength={2} className="form-input w-14 text-center text-sm" />
-            <span className="text-white/40 self-center">:</span>
-            <input placeholder="MM" maxLength={2} className="form-input w-14 text-center text-sm" />
-            <select className="form-input w-16 text-sm"><option>AM</option><option>PM</option></select>
-          </div>
-        </div>
+      {/* Time pickers — stacked on mobile, side-by-side on sm+ */}
+      <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
+        <TimePicker label="Start" />
+        <TimePicker label="End" />
       </div>
     </div>
   );

@@ -141,3 +141,14 @@
   background: rgba(57, 211, 83, 0.3);
   color: #fff;
 }
+
+/* ── Mobile: hero video — zoom out via scale without the full object-contain strip ── */
+/* scale(0.72) shrinks the rendered video by 28% so more content is visible.
+   The section is overflow-hidden so edges are clipped cleanly.
+   object-cover remains active so there's no black-bar "strip" effect. */
+@media (max-width: 639px) {
+  .hero-video {
+    transform: scale(0.72);
+    transform-origin: center center;
+  }
+}

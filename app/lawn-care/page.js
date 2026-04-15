@@ -15,6 +15,15 @@ const SERVICES = [
     location: "Customer's Place",
   },
   {
+    name: 'Weekly Mowing — Small Yard',
+    duration: '2 hrs',
+    price: '$50',
+    priceNote: 'per visit',
+    description:
+      'Professional weekly mowing service for small residential properties. Includes mowing, edging, and basic cleanup as outlined in your selected package.',
+    location: "Customer's Place",
+  },
+  {
     name: 'Weekly Mowing — Medium Yard',
     duration: '2 hrs',
     price: '$75',

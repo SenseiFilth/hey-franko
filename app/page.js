@@ -163,8 +163,8 @@ export default function HomePage() {
         {/* Middle spacer — lets the animated logo graphic own the center */}
         <div className="flex-1" />
 
-        {/* Eyebrow + CTAs — stacked just above the bottom */}
-        <div className="relative z-10 flex flex-col items-center gap-4 px-5 pb-0 sm:pb-24">
+        {/* Eyebrow + CTAs — absolute on mobile so position is directly controllable */}
+        <div className="absolute sm:relative bottom-24 sm:bottom-auto left-0 right-0 sm:pb-24 z-10 flex flex-col items-center gap-4 px-5">
           {/* Eyebrow sits just above the buttons */}
           <p
             className="hero-fade hero-fade-delay-2 text-[#39d353] uppercase tracking-[0.3em] text-xs sm:text-sm font-semibold"
